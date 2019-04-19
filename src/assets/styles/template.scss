@@ -1,0 +1,20 @@
+.header{
+    background-color: #20232A !important;
+    .navbar{
+        
+    }
+}
+
+.main{
+    .container{
+        .row{
+            display: flex;
+            article{
+                flex: 1 60%;
+            }
+            .nav-left{
+                flex: 0 0 300px;
+            }
+        }
+    }
+}
