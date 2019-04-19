@@ -1,13 +1,13 @@
 import React from 'react'
-import Navbar from '../components/Navbar';
 
-const MainLayout = ({children}) => {
-    return(
+
+const MainLayout = ({mainSide,leftSide,children}) => {
+     return(
         <div>
           <section className="header" >
             <div className="container">
               <div className="row">
-                <Navbar className="navbar navbar-expand-lg text-white w-100" />
+               
                 {children}
               </div>  
             </div>
@@ -16,10 +16,10 @@ const MainLayout = ({children}) => {
             <div className="container">
               <div className="row">
                 <article>
-                  cotent
+                  {mainSide}
                 </article>
                 <div className="nav-left">
-
+                {leftSide}
                 </div>
               </div>
             </div>
