@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-const NavLink = (props) =>{
+const NavLink = ({href,children}) =>{
     return (
-        <a className="nav-link" href={props.href}  >{props.name}</a>
+        <a className="nav-link" href={href}  >{children}</a>
     )
 }
 
