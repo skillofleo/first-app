@@ -7,7 +7,7 @@ import Page1 from "./page1";
 const history = createBrowserHistory();
 
 const Doc = ({ match, children }) => {
-  console.log(match);
+ 
   return (
       <>
     <h3>
