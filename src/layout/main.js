@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const MainLayout = ({navbar,leftSide,children}) => {
+const MainLayout = ({navbar,children}) => {
      return(
         <div>
           <section className="header" >

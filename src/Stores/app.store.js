@@ -9,8 +9,13 @@ import Tutorial from "../containers/Tutorial";
 import Page1 from "../containers/page1";
 import Count from "../containers/count";
 
+export const InitialState = {
+  counter: 1,
+  todos: [],
+};
+
 export const items = [
-    { name: "Docs", path: "/Docs" },
+    { name: "Docs", path: "/docs" },
     { name: "Tutorial", path: "/tutorial" },
     { name: "Help", path: "/help" },
     { name: "Page 1", path: "/page1" },
@@ -19,7 +24,7 @@ export const items = [
   ];
 
   export  const routeList = [
-    { name: "Docs", component: Docs, path: "/Docs", exact: true },
+    { name: "Docs", component: Docs, path: "/docs", exact: false },
     { name: "Tutorial", component: Tutorial, path: "/tutorial", exact: false },
     { name: "Help", component: Help, path: "/help", exact: false },
     { name: "Page1", component: Page1, path: "/page1", exact: false },

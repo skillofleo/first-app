@@ -1,4 +1,5 @@
-import React, { useReducer } from "react";
+import React, { useReducer,useContext } from "react";
+import { AppContext } from "../ContextProvider";
 
 const initialState = 0;
 
@@ -11,17 +12,19 @@ const reducer = (state, action) => {
   }
 };
 
+
 function Counter() {
     
-    const [count, dispatch] = useReducer(reducer, initialState);
+    // const [count, dispatch] = useReducer(reducer, initialState);
+    const {state,dispatch} = useContext(AppContext)
     const [count2, dispatch2] = useReducer(reducer, initialState);
     return (
       <div>
-        {count}
+        {state.counter}
         <br/>
-        <button onClick={() => dispatch('increment')}>+</button>
-        <button onClick={() => dispatch('decrement')}>-</button>
-        <button onClick={() => dispatch('reset')}>reset</button>
+        <button onClick={() => dispatch({type: "counter+"})}>+</button>
+        <button onClick={() => dispatch({type:'counter-'})}>-</button>
+        {/* <button onClick={() => dispatch('reset')}>reset</button> */}
         <br/>
         {count2}
         <br/>
