@@ -1,9 +1,10 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import { createBrowserHistory } from "history";
+import Page1 from './page1';
 
 
-const Doc= ({match})=>{
+
+const tuto= ({match})=>{
     return(
         <h3>Requested Param: {match.params.id}</h3>
     )
@@ -14,7 +15,8 @@ const Docs =({match})=> {
         <Router>
         <div className="row">
                 <article>
-                <Route path={`${match.path}/:id`} component={Doc} />
+                <Route path={`${match.path}/:id`} component={tuto} />
+                <Route path={`${match.path}/page1`} component={Page1} />
                 <Route
                     exact
                     path={match.path}
@@ -26,6 +28,7 @@ const Docs =({match})=> {
                 <div className="nav-left">
                     <div >
                         <ul>
+                            <li><Link to={`${match.url}/page1`}>page1</Link></li>   
                             <li><Link to={`${match.url}/Tutorial_01`}>Tutorial_01</Link></li>   
                             
                             <li><Link to={`${match.url}/Tutorial_02`}>Tutorial_02</Link></li>   

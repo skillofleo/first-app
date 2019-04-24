@@ -1,18 +1,16 @@
-import React,{useReducer} from 'react'
-import TodoApp from '../components/TodoApp';
-import { initialState, reducer } from "../reducers/todo.reducer.js";
+import React, { useContext } from "react";
+import TodoApp from "../components/TodoApp";
+import { AppContext } from "../ContextProvider";
 
-const Docs =()=> {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    return (
-        <div>
-            <h1>{state.counter}</h1>
+const Help = () => {
+//   const [state, dispatch] = useReducer(AppReducer, InitialState);
+  const {state,dispatch} = useContext(AppContext);
 
-           <TodoApp state={state} dispatch={dispatch}/>
-           
-        </div>
+  return (
+    <div>
+      <TodoApp state={state} dispatch={dispatch} />
+    </div>
+  );
+};
 
-    )
-}
-
-export default Docs
+export default Help;

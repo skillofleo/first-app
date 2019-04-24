@@ -4,27 +4,22 @@ import MainLayout from "./layout/main";
 
 import Navbar from "./components/Navbar";
 import NavItem from "./components/NavItem";
-
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import NoMatch from "./containers/noMatch";
+import { BrowserRouter as Router,  Link } from "react-router-dom";
 import {items,routers} from "./Stores/app.store"
+import { ContextProvider } from "./ContextProvider";
 
-
-const history = createBrowserHistory()
 const App = () => {
-
-
+  
   return (
-    
-    <Router history={history}>
+    <ContextProvider>
+    <Router >
       <MainLayout
         navbar={
           <Navbar
             title={
               <Link className="navbar-brand" to="/">
                 First App
-              </Link>
+                             </Link>
             }
           >
             {items.map(({ name, path }, key) => (
@@ -36,19 +31,18 @@ const App = () => {
             ))}
           </Navbar>
         }
-        leftSide={<div>left side</div>}
+        
       >
-        {/* <Route exact path="/" component={Docs}/>
+        {/* <Route exact path="/docs" component={Docs}/>
          <Route  path="/tutorial" component={Tutorial}/>
          <Route  path="/help" component={Help}/> */}
 
-        <Switch>
           {routers}
-          <Route component={NoMatch} />
-        </Switch>
+          {/* <Route exact component={NoMatch} /> */}
+          
       </MainLayout>
     </Router>
-  
+    </ContextProvider>
   );
 };
 export default App;
